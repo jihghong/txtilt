@@ -1,0 +1,22 @@
+{
+  "name": "txtilt",
+  "displayName": "TxTILT Diff Opener",
+  "description": "Automatically open a diff for .tx~ files against their .txt counterpart.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jihghong/txtilt.git"
+  },
+  "homepage": "https://github.com/jihghong/txtilt",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js"
+}

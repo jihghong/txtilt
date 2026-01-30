@@ -1,7 +1,7 @@
 const vscode = require('vscode');
 const path = require('path');
 
-const handledPinned = new Set();
+const handledOpened = new Set();
 
 function isTxTildeUri(uri) {
   return !!uri && uri.scheme === 'file' && /\.tx~$/i.test(uri.fsPath);
@@ -68,7 +68,7 @@ function registerAutoDiff(context) {
     for (const tab of event.closed) {
       const uri = tab.input && tab.input.uri;
       if (isTxTildeUri(uri)) {
-        handledPinned.delete(uri.toString());
+        handledOpened.delete(uri.toString());
       }
     }
 
@@ -80,16 +80,11 @@ function registerAutoDiff(context) {
       }
 
       const key = uri.toString();
-      if (tab.isPreview) {
-        handledPinned.delete(key);
+      if (handledOpened.has(key) || isDiffTabOpenFor(uri)) {
         continue;
       }
 
-      if (handledPinned.has(key) || isDiffTabOpenFor(uri)) {
-        continue;
-      }
-
-      handledPinned.add(key);
+      handledOpened.add(key);
       await openDiffForTxTilde(uri);
     }
   });

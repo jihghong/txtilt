@@ -1,6 +1,6 @@
 # TxTILT Diff Opener
 
-This VS Code extension opens a diff for `.tx~` files against their matching `.txt` file when you pin the tab (double-click).
+This VS Code extension opens a diff for `.tx~` files against their matching `.txt` file as soon as you open the file.
 
 ## Installation
 
@@ -20,7 +20,8 @@ From source (if you want to build/test yourself)
 4) Run **Developer: Install Extension from Location...**
 5) Select the cloned folder to install.
 
-After installation, double‑click any `*.tx~` file and the diff should open.
+After installation, single‑click any `*.tx~` file and the diff should open in the background.
+If you close the diff, it will stay closed until you reopen the `.tx~` file.
 
 ## Packaging (VSIX)
 

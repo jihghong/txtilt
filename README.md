@@ -5,12 +5,12 @@ This VS Code extension opens a diff for `.tx~` files against their matching `.tx
 ## Installation
 
 Recommended (from VSIX)
-1) Download the latest `txtilt-*.vsix` from the GitHub Releases page:
-   `https://github.com/jihghong/txtilt/releases`
+1) Download the latest `txtilt-*.vsix` from GitHub Releases:
+   https://github.com/jihghong/txtilt/releases
 2) Open VS Code.
 3) Open Command Palette (`Ctrl+Shift+P`).
 4) Run **Extensions: Install from VSIX...**
-5) Select the downloaded `.vsix` file, then reload when prompted.
+5) Select the downloaded `.vsix` file.
 
 From source (if you want to build/test yourself)
 1) Clone the repo:
